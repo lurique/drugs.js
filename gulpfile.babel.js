@@ -29,7 +29,7 @@ let events = (type, path) => {
 gulp.task('javascript', () => {
 	return gulp.src(src + '/js/*.js')
 		.pipe(changed(dest, {extension: '.js'}))
-		.pipe(babel({ presets: ['es2015'] }))
+		//.pipe(babel({ presets: ['es2015', { "modules": false }] }))
 		.pipe(concat('main.min.js'))
 		.pipe(uglify())
 		.pipe(filesize())
