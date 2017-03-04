@@ -13,14 +13,14 @@ var Drug = Drug || {};
 			this.$button = $('#marijuana');
 			this.$document = $('html, body');
 			this.$body = $('body');
-			this.$elements = $('*');
+			this.$elements = this.$body.find('*');
+			this.$smoke = this.$body.find('.smoke');
 		},
 
 		bindEvents: function() {
 			this.$button.click(this.Events.slowdownScroll);
-			this.$button.click(this.Events.slowdownAnimations);
-			this.$button.click(this.Events.blurView);
 			this.$button.click(this.Events.addSmoke);
+			this.$button.click(this.Events.slowdownAnimations);
 		},
 
 		Events: {
@@ -58,21 +58,20 @@ var Drug = Drug || {};
 				}
 			},
 
+			addSmoke: function() {
+				var self = Drug.Marijuana;
+
+				self.$body.append('<div class="smoke"></div>');
+				self.$body.find('.smoke').css('opacity', '0.85');
+				self.$body.find('*').css('filter', 'blur(0.5px)');
+			},
+			
 			slowdownAnimations: function() {
 				var self = Drug.Marijuana;
 
 				self.$elements.css('transition', 'all 8s ease');
-			},
-
-			blurView: function() {
-				var self = Drug.Marijuana;
-
-				self.$body.css('filter', 'blur(0.5px)');
-			},
-
-			addSmoke: function() {
-				console.log('Cheguei até aqui');
 			}
+
 		}
 
 	}
