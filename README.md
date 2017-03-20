@@ -1,3 +1,5 @@
+![Version: 0.1v](https://img.shields.io/badge/Version-0.1v-blue.svg) ![Coverage: 80%](https://img.shields.io/badge/Coverage-08%25-red.svg) ![Build: passing](https://img.shields.io/badge/Build-passing-brightgreen.svg) 
+
 # Drugs.js
 Drugs effects in JS. Everything here you can use without moderation and dont get addicted.
 
